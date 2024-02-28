@@ -19,6 +19,11 @@ public class Main {
         Map<Character, Integer> m = Solution.countDuplicates(TEXT);
         displayExecutionTime(System.nanoTime() - startTime);
         System.out.println(Arrays.toString(m.entrySet().toArray()));
+
+        startTime = System.nanoTime();
+        Map<String, Integer> mcp = Solution.countCodePoints(TEXT_CP);
+        displayExecutionTime(System.nanoTime() - startTime);
+        System.out.println(Arrays.toString(mcp.entrySet().toArray()));
     }
 
     private static void displayExecutionTime(long time) {

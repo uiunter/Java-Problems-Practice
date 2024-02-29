@@ -1,8 +1,7 @@
-package challenge;
+package challenge._1p;
 
 import java.util.Arrays;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 public class Main {
     private static final String TEXT = "Be strong, be fearless, be beautiful. "
@@ -17,17 +16,12 @@ public class Main {
 
         long startTime = System.nanoTime();
         Map<Character, Integer> m = Solution.countDuplicates(TEXT);
-        displayExecutionTime(System.nanoTime() - startTime);
+        DisplayExecTime.displayExecutionTime(System.nanoTime() - startTime);
         System.out.println(Arrays.toString(m.entrySet().toArray()));
 
         startTime = System.nanoTime();
         Map<String, Integer> mcp = Solution.countCodePoints(TEXT_CP);
-        displayExecutionTime(System.nanoTime() - startTime);
+        DisplayExecTime.displayExecutionTime(System.nanoTime() - startTime);
         System.out.println(Arrays.toString(mcp.entrySet().toArray()));
-    }
-
-    private static void displayExecutionTime(long time) {
-        System.out.println("Execution time: " + time + " ns" + " (" +
-                TimeUnit.MILLISECONDS.convert(time, TimeUnit.NANOSECONDS) + " ms)");
     }
 }
